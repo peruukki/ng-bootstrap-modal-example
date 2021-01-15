@@ -1,27 +1,28 @@
-# MyApp
+# ng-bootstrap-modal-example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+This is an example Angular 11 app to reproduce unexpected behavior where NG Bootstrap's modal entry animation
+(downwards movement) is missing  when running the production build:
 
-## Development server
+![Entry animation missing](media/animation-missing.gif)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The animation works as expected when running the development server:
 
-## Code scaffolding
+![Entry animation shows](media/animation-works.gif)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Production build (to reproduce the problem)
 
-## Build
+Build and start the HTTP server:
+```sh
+npm run start:prod
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Then go to http://localhost:4200/.
 
-## Running unit tests
+## Development server (for comparison)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Build and start the development server:
+```sh
+npm start
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Then go to http://localhost:4200/.
